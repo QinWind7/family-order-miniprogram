@@ -1,0 +1,60 @@
+<view class="page chef-page">
+  <view class="chef-head">
+    <view>
+      <view class="hello-title">{{greeting}}，{{user.name}}</view>
+      <view class="hello-sub">今天有 {{availableCount}} 道菜在供应</view>
+    </view>
+    <view class="switch-role" bindtap="onSwitchRole">切换身份</view>
+  </view>
+
+  <view class="orders-banner" bindtap="goOrders">
+    <view class="banner-left">
+      <view class="banner-icon">📝</view>
+      <view>
+        <view class="banner-title">今日点单</view>
+        <view class="banner-sub">{{pendingCount > 0 ? '有 ' + pendingCount + ' 单等你接' : '暂时没有新的点单'}}</view>
+      </view>
+    </view>
+    <view class="banner-go">去看看</view>
+  </view>
+
+  <view class="list-head">
+    <view class="section-title">菜品列表</view>
+    <view class="list-count">{{dishes.length}} 道</view>
+  </view>
+
+  <view wx:if="{{loading}}" class="empty">
+    <view class="empty-text">正在同步菜品…</view>
+  </view>
+
+  <view wx:elif="{{dishes.length === 0}}" class="empty">
+    <view class="empty-emoji">🍳</view>
+    <view class="empty-text">还没有菜品，先添加一道吧</view>
+  </view>
+
+  <view class="dish-row card {{item.available ? '' : 'is-off'}}" wx:for="{{dishes}}" wx:key="id">
+    <view class="thumb-sm" style="background: {{item.tone}}">
+      <image wx:if="{{item.imageUrl}}" class="thumb-sm-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
+      <text wx:else class="thumb-sm-char">{{item.initial}}</text>
+    </view>
+    <view class="dish-main">
+      <view class="dish-head">
+        <text class="dish-name">{{item.name}}</text>
+        <text class="dish-cat">{{item.category}}</text>
+      </view>
+      <view class="dish-note">{{item.note ? item.note : '暂无备注'}}</view>
+      <view class="dish-actions">
+        <view class="switch-wrap">
+          <switch checked="{{item.available}}" color="#F5583B" data-id="{{item.id}}" bindchange="onToggleAvailable" />
+          <text class="switch-label">{{item.available ? '今天做' : '今天不做'}}</text>
+        </view>
+        <view class="links">
+          <text class="link" data-id="{{item.id}}" bindtap="onEdit">编辑</text>
+          <text class="link danger" data-id="{{item.id}}" bindtap="onDelete">删除</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="fab" bindtap="goAdd">＋ 新增菜品</view>
+</view>

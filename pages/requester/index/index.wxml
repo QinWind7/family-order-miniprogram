@@ -1,0 +1,61 @@
+<view class="requester-wrap">
+  <view class="page requester-page">
+    <view class="r-head">
+      <view>
+        <view class="hello-title">{{greeting}}，{{user.name}}</view>
+        <view class="hello-sub">今天想吃点什么？</view>
+      </view>
+      <view class="my-orders-link" bindtap="goMyOrders">我的点菜</view>
+    </view>
+
+    <scroll-view class="cats" scroll-x="{{true}}" show-scrollbar="{{false}}">
+      <view
+        class="cat {{activeCategory === item ? 'active' : ''}}"
+        wx:for="{{categories}}"
+        wx:key="*this"
+        data-name="{{item}}"
+        bindtap="onCategory"
+      >{{item}}</view>
+    </scroll-view>
+
+    <view wx:if="{{loading}}" class="empty">
+      <view class="empty-text">正在同步菜单…</view>
+    </view>
+
+    <view wx:elif="{{visibleDishes.length === 0}}" class="empty">
+      <view class="empty-emoji">🥬</view>
+      <view class="empty-text">这个分类还没有菜</view>
+    </view>
+
+    <view class="grid">
+      <view class="dish-card" wx:for="{{visibleDishes}}" wx:key="id">
+        <view class="thumb" style="background: {{item.tone}}">
+          <image wx:if="{{item.imageUrl}}" class="thumb-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
+          <text wx:else class="thumb-char">{{item.initial}}</text>
+          <view wx:if="{{!item.available}}" class="soldout">今日不做</view>
+        </view>
+        <view class="dish-body">
+          <view class="dish-name">{{item.name}}</view>
+          <view class="dish-note">{{item.note ? item.note : ' '}}</view>
+          <view class="dish-foot">
+            <text class="dish-cat">{{item.category}}</text>
+            <view wx:if="{{item.available}}" class="stepper">
+              <view wx:if="{{item.qty > 0}}" class="step minus" data-id="{{item.id}}" catchtap="onMinus">−</view>
+              <text wx:if="{{item.qty > 0}}" class="qty">{{item.qty}}</text>
+              <view class="step plus" data-id="{{item.id}}" catchtap="onPlus">＋</view>
+            </view>
+            <text wx:else class="off-text">休息中</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cart-bar">
+    <view class="cart-info">
+      <view class="cart-main">已选 <text class="cart-num">{{cartCount}}</text> 份</view>
+      <view class="cart-sub">{{cartKinds}} 道菜</view>
+    </view>
+    <view class="cart-go {{cartCount > 0 ? '' : 'is-disabled'}}" bindtap="goConfirm">去点单</view>
+  </view>
+</view>

@@ -1,0 +1,154 @@
+.login-page {
+  padding-top: 40rpx;
+}
+
+.hero {
+  padding: 16rpx 0 48rpx;
+  text-align: center;
+}
+
+.hero-badge {
+  width: 148rpx;
+  height: 148rpx;
+  margin: 0 auto 28rpx;
+  border-radius: 46rpx;
+  background: linear-gradient(135deg, #FFE7CC, #FFC38F);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 74rpx;
+  box-shadow: 0 18rpx 40rpx rgba(245, 88, 59, 0.18);
+}
+
+.hero-title {
+  font-size: 46rpx;
+  font-weight: 700;
+  letter-spacing: 2rpx;
+}
+
+.hero-sub {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  color: #9A9187;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  padding: 28rpx;
+}
+
+.avatar-btn {
+  width: 112rpx;
+  height: 112rpx;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 32rpx;
+  overflow: hidden;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.avatar-btn::after {
+  border: none;
+}
+
+.avatar {
+  width: 112rpx;
+  height: 112rpx;
+  display: block;
+  border-radius: 32rpx;
+}
+
+.avatar-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F8F3EB;
+  color: #C4B8A7;
+  font-size: 46rpx;
+}
+
+.profile-main {
+  flex: 1;
+  margin-left: 26rpx;
+}
+
+.profile-label {
+  font-size: 24rpx;
+  color: #A79E92;
+}
+
+.nickname {
+  height: 56rpx;
+  margin-top: 8rpx;
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.ph {
+  color: #CFC5B6;
+  font-weight: 400;
+}
+
+.role-title {
+  margin: 48rpx 8rpx 22rpx;
+  font-size: 26rpx;
+  color: #9A9187;
+}
+
+.roles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.role-card {
+  width: calc(50% - 12rpx);
+  padding: 34rpx 26rpx;
+  border-radius: 32rpx;
+  background: #FFFFFF;
+  box-shadow: 0 10rpx 28rpx rgba(96, 63, 28, 0.06);
+}
+
+.role-card-hover {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.role-icon {
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42rpx;
+}
+
+.role-icon.eater {
+  background: #FFF0DC;
+}
+
+.role-icon.chef {
+  background: #FFE5DE;
+}
+
+.role-name {
+  margin-top: 24rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.role-desc {
+  margin-top: 6rpx;
+  font-size: 24rpx;
+  color: #A79E92;
+}
+
+.foot {
+  margin-top: 60rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #BDB2A2;
+}

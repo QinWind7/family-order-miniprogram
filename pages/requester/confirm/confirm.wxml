@@ -1,0 +1,46 @@
+<view class="page">
+  <view class="tip-card card">确认份数后提交给掌勺人，只记录菜名和数量</view>
+
+  <view wx:if="{{loading}}" class="empty">
+    <view class="empty-text">正在同步清单…</view>
+  </view>
+
+  <view wx:elif="{{items.length === 0}}" class="empty">
+    <view class="empty-emoji">🥢</view>
+    <view class="empty-text">清单是空的，回去选几道菜吧</view>
+  </view>
+
+  <view wx:else>
+    <view class="list card">
+      <view class="row-line" wx:for="{{items}}" wx:key="dishId">
+        <view class="thumb-xs" style="background: {{item.tone}}">
+          <image wx:if="{{item.imageUrl}}" class="thumb-xs-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
+          <text wx:else class="thumb-xs-char">{{item.initial}}</text>
+        </view>
+        <view class="row-main">
+          <view class="row-name">{{item.name}}</view>
+          <view class="row-cat">{{item.category}}</view>
+        </view>
+        <view class="stepper">
+          <view class="step minus" data-id="{{item.dishId}}" bindtap="onMinus">−</view>
+          <text class="qty">{{item.qty}}</text>
+          <view class="step plus" data-id="{{item.dishId}}" bindtap="onPlus">＋</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="remark-card card">
+      <view class="remark-title">备注给掌勺人</view>
+      <textarea
+        class="remark-input"
+        placeholder="比如：少盐、不要香菜"
+        placeholder-class="ph"
+        value="{{remark}}"
+        maxlength="100"
+        bindinput="onRemark"
+      />
+    </view>
+
+    <view class="submit btn-primary" bindtap="onSubmit">提交点单 · 共 {{totalQty}} 份</view>
+  </view>
+</view>

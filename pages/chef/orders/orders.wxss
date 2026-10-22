@@ -1,0 +1,41 @@
+.summary {
+  padding: 16rpx 4rpx 24rpx;
+}
+
+.summary-title {
+  font-size: 42rpx;
+  font-weight: 700;
+}
+
+.summary-sub {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #9A9187;
+}
+
+.filters {
+  white-space: nowrap;
+  margin: 0 -28rpx 14rpx;
+  padding: 10rpx 0;
+  box-sizing: content-box;
+}
+
+.filter {
+  display: inline-block;
+  margin-left: 20rpx;
+  padding: 14rpx 30rpx;
+  border-radius: 999rpx;
+  background: #FFFFFF;
+  color: #7C7368;
+  font-size: 26rpx;
+  box-shadow: 0 6rpx 16rpx rgba(96, 63, 28, 0.05);
+}
+
+.filter:first-child {
+  margin-left: 28rpx;
+}
+
+.filter.active {
+  background: #2D2A26;
+  color: #FFF7EE;
+}

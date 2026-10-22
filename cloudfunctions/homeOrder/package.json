@@ -1,0 +1,9 @@
+{
+  "name": "homeOrder",
+  "version": "1.0.0",
+  "description": "家庭点菜：集合初始化、获取 openid、更新点单状态",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}

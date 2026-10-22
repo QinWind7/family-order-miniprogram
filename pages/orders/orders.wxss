@@ -1,0 +1,19 @@
+.page-head {
+  padding: 16rpx 4rpx 30rpx;
+}
+
+.page-title {
+  font-size: 42rpx;
+  font-weight: 700;
+}
+
+.page-sub {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #9A9187;
+}
+
+.empty-btn {
+  width: 300rpx;
+  margin: 40rpx auto 0;
+}

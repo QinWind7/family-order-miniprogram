@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/requester/index/index",
+    "pages/requester/confirm/confirm",
+    "pages/orders/orders",
+    "pages/chef/index/index",
+    "pages/chef/orders/orders",
+    "pages/chef/dish-edit/dish-edit"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFF8F1",
+    "navigationBarTitleText": "家庭小灶",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F7F2EA"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

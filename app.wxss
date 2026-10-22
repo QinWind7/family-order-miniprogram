@@ -1,0 +1,215 @@
+page {
+  background: #F7F2EA;
+  color: #2D2A26;
+  font-size: 28rpx;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 28rpx 28rpx calc(48rpx + env(safe-area-inset-bottom));
+}
+
+.card {
+  background: #FFFFFF;
+  border-radius: 28rpx;
+  box-shadow: 0 10rpx 28rpx rgba(96, 63, 28, 0.06);
+}
+
+.between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.muted {
+  color: #9A9187;
+}
+
+.btn-primary {
+  height: 96rpx;
+  line-height: 96rpx;
+  border-radius: 999rpx;
+  background: linear-gradient(135deg, #FF9A4D 0%, #F5583B 100%);
+  color: #FFFFFF;
+  font-size: 32rpx;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 14rpx 28rpx rgba(245, 88, 59, 0.24);
+}
+
+.btn-primary.disabled {
+  opacity: 0.4;
+  box-shadow: none;
+}
+
+.btn-mini {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 64rpx;
+  padding: 0 30rpx;
+  border-radius: 999rpx;
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.btn-mini.primary {
+  background: linear-gradient(135deg, #FF9A4D, #F5583B);
+  color: #FFFFFF;
+}
+
+.btn-mini.ghost {
+  background: #F5F0E8;
+  color: #71685D;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 6rpx 18rpx;
+  border-radius: 999rpx;
+  font-size: 22rpx;
+  line-height: 1.4;
+}
+
+.st-pending {
+  background: #FFF1D6;
+  color: #B87500;
+}
+
+.st-cooking {
+  background: #FFE4DC;
+  color: #D9462C;
+}
+
+.st-done {
+  background: #E2F5E6;
+  color: #2F8F4E;
+}
+
+.st-cancelled {
+  background: #EFEDEA;
+  color: #90887D;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+}
+
+.step {
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  line-height: 1;
+}
+
+.step.plus {
+  background: linear-gradient(135deg, #FF9A4D, #F5583B);
+  color: #FFFFFF;
+  box-shadow: 0 6rpx 14rpx rgba(245, 88, 59, 0.26);
+}
+
+.step.minus {
+  background: #F4EEE5;
+  color: #7C7368;
+}
+
+.qty {
+  min-width: 46rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.empty {
+  padding: 110rpx 0;
+  text-align: center;
+  color: #A79E92;
+}
+
+.empty-emoji {
+  font-size: 76rpx;
+}
+
+.empty-text {
+  margin-top: 16rpx;
+  font-size: 26rpx;
+}
+
+/* 点单卡片（点菜人 / 掌勺人共用） */
+.order-card {
+  padding: 28rpx;
+  margin-bottom: 24rpx;
+}
+
+.order-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-name {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.order-time {
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  color: #A79E92;
+}
+
+.order-items {
+  margin-top: 20rpx;
+  padding-top: 16rpx;
+  border-top: 2rpx solid #F4EEE5;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6rpx 0;
+  font-size: 27rpx;
+}
+
+.order-item-name {
+  color: #3A3631;
+}
+
+.order-item-qty {
+  color: #9A9187;
+}
+
+.order-remark {
+  margin-top: 14rpx;
+  padding: 14rpx 18rpx;
+  border-radius: 16rpx;
+  background: #FBF6EE;
+  font-size: 24rpx;
+  color: #8A7B69;
+}
+
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20rpx;
+}
+
+.order-actions .btn-mini {
+  margin-left: 16rpx;
+}
+
+.order-total {
+  margin-top: 12rpx;
+  text-align: right;
+  font-size: 22rpx;
+  color: #A79E92;
+}

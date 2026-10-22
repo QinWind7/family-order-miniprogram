@@ -1,0 +1,44 @@
+<view class="page login-page">
+  <view class="hero">
+    <view class="hero-badge">🍲</view>
+    <view class="hero-title">家里的小灶</view>
+    <view class="hero-sub">今天想吃什么，交给掌勺的人</view>
+  </view>
+
+  <view class="card profile">
+    <button class="avatar-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      <image wx:if="{{avatarUrl}}" class="avatar" src="{{avatarUrl}}" mode="aspectFill"></image>
+      <view wx:else class="avatar avatar-empty">＋</view>
+    </button>
+    <view class="profile-main">
+      <view class="profile-label">怎么称呼你</view>
+      <input
+        class="nickname"
+        type="nickname"
+        placeholder="输入昵称"
+        placeholder-class="ph"
+        value="{{name}}"
+        maxlength="12"
+        bindinput="onNameInput"
+        bindblur="onNameInput"
+      />
+    </view>
+  </view>
+
+  <view class="role-title">选择你的身份</view>
+
+  <view class="roles">
+    <view class="role-card" hover-class="role-card-hover" data-role="requester" bindtap="onChooseRole">
+      <view class="role-icon eater">🍚</view>
+      <view class="role-name">我是点菜人</view>
+      <view class="role-desc">挑今天想吃的菜</view>
+    </view>
+    <view class="role-card" hover-class="role-card-hover" data-role="chef" bindtap="onChooseRole">
+      <view class="role-icon chef">🍳</view>
+      <view class="role-name">我是掌勺人</view>
+      <view class="role-desc">管理菜品和点单</view>
+    </view>
+  </view>
+
+  <view class="foot">仅家庭内部使用 · 不计费用</view>
+</view>

@@ -1,0 +1,47 @@
+<view class="page">
+  <view class="page-head">
+    <view class="page-title">我的点菜</view>
+    <view class="page-sub">共 {{orders.length}} 单</view>
+  </view>
+
+  <view wx:if="{{loading}}" class="empty">
+    <view class="empty-text">正在同步点菜记录…</view>
+  </view>
+
+  <view wx:elif="{{orders.length === 0}}" class="empty">
+    <view class="empty-emoji">🍽️</view>
+    <view class="empty-text">还没有点过菜</view>
+    <view class="empty-btn btn-primary" bindtap="goOrder">去点菜</view>
+  </view>
+
+  <view wx:for="{{orders}}" wx:key="id" class="order-card card">
+    <view class="order-head">
+      <view class="order-name">今日点单</view>
+      <view class="status-pill {{item.statusClass}}">{{item.statusText}}</view>
+    </view>
+    <view class="order-time">{{item.timeText}}</view>
+
+    <view class="order-items">
+      <view class="order-item" wx:for="{{item.items}}" wx:for-item="dish" wx:key="name">
+        <text class="order-item-name">{{dish.name}}</text>
+        <text class="order-item-qty">×{{dish.qty}}</text>
+      </view>
+    </view>
+
+    <view wx:if="{{item.remark}}" class="order-remark">备注：{{item.remark}}</view>
+
+    <view class="order-total">共 {{item.totalQty}} 份</view>
+
+    <view wx:if="{{item.actions.length > 0}}" class="order-actions">
+      <view
+        class="btn-mini {{action.type}}"
+        wx:for="{{item.actions}}"
+        wx:for-item="action"
+        wx:key="key"
+        data-id="{{item.id}}"
+        data-action="{{action.key}}"
+        bindtap="onAction"
+      >{{action.label}}</view>
+    </view>
+  </view>
+</view>
